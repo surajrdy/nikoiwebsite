@@ -11,6 +11,7 @@
         <link href="main.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com" rel="preconnect"/>
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+        <link rel="icon" type="image/x-icon" href="nikoi.png">
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
         <script type="text/javascript">
             WebFont.load({
@@ -249,18 +250,23 @@
                                         </p>
                                     </div>
                                 </div>
+                                 <form name="email-form" method="POST" netlify>
+                                                <center><input type="email" name="email" placeholder="E-Mail Address" required=""/></center>
+                                                <br><center><button class="button w-button" type="submit">Send</button></center>
+                                            </form>
                                 <div class="brix---buttons-row-center">
                                     <div class="brix---button-row-left">
                                         <div class="form-block w-form">
-                                            <form id="email-form" name="email-form" data-name="Email Form" method="get" class="sysf-form" data-wf-page-id="6511e51810c8ea7a11a29a6c" data-wf-element-id="b6691043-7e66-5446-af76-9cc811043988">
+                                            <!--<form name="email-form" data-name="Email Form" method="post" class="sysf-form" netlify>
                                                 <div class="sysf-input-with-label">
-                                                    <input type="email" class="sysf-input sysf-medium w-input" maxlength="256" name="email-input-4" data-name="email-input-4" placeholder="E-mail address" id="email-input-4" required=""/>
+                                                    <input type="email" class="sysf-input sysf-medium w-input" maxlength="256" name="email" placeholder="E-mail address" required=""/>
                                                 </div>
+                                                <button class="button w-button" type="submit">Send</button>
                                             </form>
-                                            <div class="success-message w-form-done"></div>
-                                            <div class="w-form-fail">
-                                                <div>Oops! Something went wrong while submitting the form.</div>
-                                            </div>
+                                            <form name="email-form" method="POST" netlify>
+                                                <input type="email" name="email" placeholder="E-Mail Address" required=""/>
+                                                <button class="button w-button" type="submit">Send</button>
+                                            </form>-->
                                         </div>
                                     </div>
                                 </div>
