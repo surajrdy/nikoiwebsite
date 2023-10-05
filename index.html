@@ -252,10 +252,14 @@
                                 <div class="brix---buttons-row-center">
                                     <div class="brix---button-row-left">
                                         <div class="form-block w-form">
-                                            <form name="email-form" data-name="Email Form" method="post" class="sysf-form" netlify>
+                                            <!--<form name="email-form" data-name="Email Form" method="post" class="sysf-form" netlify>
                                                 <div class="sysf-input-with-label">
                                                     <input type="email" class="sysf-input sysf-medium w-input" maxlength="256" name="email" placeholder="E-mail address" required=""/>
                                                 </div>
+                                                <button class="button w-button" type="submit">Send</button>
+                                            </form>-->
+                                            <form name="email-form" method="POST" netlify>
+                                                <input type="email" name="email" placeholder="E-Mail Address" required=""/>
                                                 <button class="button w-button" type="submit">Send</button>
                                             </form>
                                         </div>
