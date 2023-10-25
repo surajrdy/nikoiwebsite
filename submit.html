@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign In</title>
+  <link rel="icon" type="image/x-icon" href="nikoi.png">
+  <style>
+    body {
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: #eee;
+      border-radius: 10px;
+      box-shadow: 0 0 10px 2px #bbb;
+      width: 30vw;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: purple;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      background-color: purple;
+      color: white;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #9932cc;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <h1>Sign In</h1>
+
+    <form action="home.html" method="post" onsubmit="return signIn()">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+      <input type="submit" value="Sign In">
+    </form>
+  </div>
+
+  <script>
+    function onGoogleSignIn(googleUser) {
+      // Handle Google Sign-In here
+      var profile = googleUser.getBasicProfile();
+      var googleEmail = profile.getEmail();
+      // Check if googleEmail is allowed to sign in
+      if (googleEmail === "your@example.com") {
+        // Redirect to the desired page after successful Google Sign-In
+        window.location.href = "home.html";
+      } else {
+        // Handle unauthorized Google Sign-In
+        alert("Google Sign-In not allowed for this email.");
+        // Sign out the user from Google (optional)
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log("User signed out.");
+        });
+      }
+    }
+
+    function signIn() {
+      // Get the username and password from the form
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Add your specific combination check here
+      if (username === "yourUsername" && password === "yourPassword") {
+        // Redirect to the desired page after successful local Sign-In
+        return true;
+      } else {
+        alert("Invalid username or password");
+        return false;
+      }
+    }
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="410409981863-7l6816780vu00bp8qm2i49imr567e1u9.apps.googleusercontent.com">
+</body>
+</html>
