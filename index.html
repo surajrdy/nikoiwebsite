@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Nikoi</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <meta content="Nikoi is the only research project-management suite you'll ever need. Efficient. Simple. Effective"
     name="description" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -39,6 +40,51 @@
       height: auto;
     }
   </style>
+    <script>
+      $(document).ready(function() {
+        // Function to fetch data from the OpenAI API
+        function openaiFetchAPI(form) {
+          console.log("Calling GPT3");
+  
+          var url = "https://api.openai.com/v1/chat/completions";
+          var apiKey = "YOUR_API_KEY"; // Replace with your actual API key
+          var bearer = "Bearer " + apiKey;
+          var prompt = "Generate 1 novel research project idea relating to the following keywords: " +
+            "fractional calculus. Then, write an abstract for the project and give steps to go through the project and how long it would take for each step. Finally, give some sources that may be useful for this project.";
+  
+          // Use jQuery to make the AJAX request
+          $.ajax({
+            url: url,
+            type: "POST",
+            headers: {
+              "Authorization": bearer,
+              "Content-Type": "application/json",
+            },
+            data: JSON.stringify({
+              messages: [{ role: "user", content: prompt }],
+              model: "gpt-4",
+              temperature: 1,
+            }),
+            success: function(data) {
+              console.log(data);
+              console.log(typeof data);
+              console.log(Object.keys(data));
+              console.log(data["choices"][0].text);
+            },
+            error: function(error) {
+              console.error("Error fetching data:", error);
+              alert("Failed to fetch data. Please check the console for details.");
+            }
+          });
+        }
+  
+        // Use jQuery to handle form submission
+        $("form[name='try-form']").submit(function(event) {
+          event.preventDefault(); // Prevent the default form submission
+          openaiFetchAPI(this);
+        });
+      });
+    </script>
 </head>
 
 <body class="body">
@@ -690,11 +736,11 @@
                     alt="Heart - Elements Webflow Library - BRIX Templates" class="brix---icon-stats-v7" />
                 </div>
                 <div class="brix---color-neutral-801">
-                  <p class="brix---text-300-bold">Customer satisfaction</p>
+                  <p class="brix---text-300-bold">Beta-Batch #2</p>
                 </div>
                 <div class="brix---color-neutral-803">
                   <div class="brix---display-2">
-                    99<span class="brix---color-accent-1">%</span>
+                    270<span class="brix---color-accent-1"></span>
                   </div>
                 </div>
               </div>
@@ -743,7 +789,7 @@
                 </div>
                 <div class="brix---color-neutral-803">
                   <div class="brix---display-2">
-                    20<a href="#" class="link-2"></a>
+                    22<a href="#" class="link-2"></a>
                   </div>
                 </div>
               </div>
