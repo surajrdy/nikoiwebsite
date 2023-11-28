@@ -208,6 +208,23 @@
             .no-scrollbar: :-webkit-scrollbar {
                 display: none;
                 // Safari and Chrome }
+                #notification-bar {
+  background-color: rgba(0, 0, 0, 0.486); 
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed; 
+  bottom: 0;
+  top: auto;
+  left: 0;
+  right: 0;
+  z-index: 99;  
+  transition: top 0.2s ease-out;
+}
+
+#notification-bar .content {
+  line-height: 1.5; 
+}
           </style>
         </div>
       </div>
@@ -246,6 +263,11 @@
                   </div>
                 </div>
               </nav>
+              <div id="notification-bar">
+                <div class="content">
+                   📣  Curious of our features? Try our demo below! 
+                </div>
+              </div>
               <a href="#" class="logo w-nav-brand">
                 <img
                   src="https://uploads-ssl.webflow.com/6511e51810c8ea7a11a299b2/6511e69c4defb5629e397868_64d1b27d7588ef5b1c257ecb_My%20project%20(1).png"
@@ -674,7 +696,7 @@
         </div>
         <div id="try">
           <div class="text-align-center">
-            <h2 class="heading-medium"><b>Try It Out</b></h2>
+            <h1 class="heading-large"><b>Try Our Base-Model AI</b></h1>
             <div class="_1-25rem-spacer"></div>
             <p class="subheading">
               Just type in a few keywords, and we'll make a file with a project
