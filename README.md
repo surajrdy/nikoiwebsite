@@ -1,1 +1,2 @@
-# nikoiwebsite
+# Website for Nikoi
+# Custom-made
